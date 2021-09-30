@@ -52,6 +52,7 @@ public class Brand implements Comparable<Brand>{
     }
 
     public void addProduct(IProduct product){
+        product.setID(products.size());
         products.add(product);
     }
 }

@@ -4,11 +4,13 @@ public abstract class Product implements IProduct{
     private ProductType productType;
     private String productName;
     private int price;
+    private int id;
 
     public Product(ProductType productType, String productName, int price){
         this.productType = productType;
         this.productName = productName;
         this.price = price;
+        this.id = -1;
     }
 
     public void setProductName(String productName){
@@ -36,5 +38,12 @@ public abstract class Product implements IProduct{
     @Override
     public ProductType getProductType() {
         return productType;
+    }
+
+    public void setID(int id) {
+        this.id = id;
+    }
+    public int getID(){
+        return this.id;
     }
 }

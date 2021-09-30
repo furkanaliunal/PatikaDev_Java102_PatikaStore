@@ -9,5 +9,7 @@ public interface IProduct extends Comparable<IProduct> {
     public String getProductName();
     public ProductType getProductType();
     public void setProductName(String productName);
+    public void setID(int id);
+    public int getID();
 
 }

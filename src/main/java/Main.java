@@ -2,6 +2,6 @@ public class Main {
     public static void main(String[] args) {
         Shop patikaStore = new Shop("PatikaStore");
         new initalizeDemo(patikaStore);
-        ManagementPanel panel = new ManagementPanel(patikaStore);
+        new ManagementPanel(patikaStore);
     }
 }

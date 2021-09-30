@@ -80,28 +80,27 @@ public class Shop {
         for (Brand brand : brands){
             for (IProduct product : brand.getProducts()){
                 if (product.getProductType() == type){
-                    products.add(brand.getBrandName() + " " + product);
+                    products.add(brand.getBrandName() + "  " + product.getID() + " " + product);
                 }
             }
         }
 
-        System.out.println("** Beginning to print products **");
-        System.out.println("\n" + type + "s:");
+        System.out.println("\n\n\n" + type + " Listelesi\n");
         for (String s : products){
             System.out.println(s);
         }
-        System.out.println("");
-        System.out.println("** End of products **");
+        System.out.println("\n\n");
 
     }
 
     public void listBrands() {
         TreeSet<Brand> brands = brandsManager.getAllBrands();
-        System.out.println("Printing All Brands:");
+        System.out.println("\nMarkalarımız");
+        System.out.println("--------------");
         for (Brand brand : brands) {
-            System.out.println(brand);
+            System.out.println("- " + brand);
         }
-        System.out.println("** End of brands **");
+        System.out.println("\n\n");
     }
 
 }
