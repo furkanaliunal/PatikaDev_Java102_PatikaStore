@@ -95,10 +95,10 @@ public class Shop {
 
     }
 
-    public void listBrands(){
+    public void listBrands() {
         TreeSet<Brand> brands = brandsManager.getAllBrands();
         System.out.println("Printing All Brands:");
-        for (Brand brand : brands){
+        for (Brand brand : brands) {
             System.out.println(brand);
         }
         System.out.println("** End of brands **");
