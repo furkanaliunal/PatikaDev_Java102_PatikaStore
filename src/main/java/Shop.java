@@ -34,12 +34,15 @@ public class Shop {
         brandsManager.addBrand(brandName);
     }
 
+
+    private int lastID = 0;
     public void addProduct(String brandName, IProduct product){
         Brand brand = brandsManager.getBrand(brandName);
         //System.out.println(brand.getBrandName() + " isimli markaya şu ürün ekleniyor: " + product);
         if (brand.getId() == -1){
             return;
         }
+        product.setID(lastID++);
         brand.addProduct(product);
     }
 
@@ -80,16 +83,17 @@ public class Shop {
         for (Brand brand : brands){
             for (IProduct product : brand.getProducts()){
                 if (product.getProductType() == type){
-                    products.add(brand.getBrandName() + "  " + product.getID() + " " + product);
+                    products.add(product.getID() + ", " + brand.getBrandName() + ", " + product + ", " + product.getPrice() + "TL");
                 }
             }
         }
-
-        System.out.println("\n\n\n" + type + " Listelesi\n");
+        System.out.println("\n\n\n" + type + " Listesi\n");
+        System.out.println("--------------------------------------------------");
+        System.out.println("ID, Marka, Model, Fiyat");
         for (String s : products){
             System.out.println(s);
         }
-        System.out.println("\n\n");
+        System.out.println("--------------------------------------------------\n\n");
 
     }
 

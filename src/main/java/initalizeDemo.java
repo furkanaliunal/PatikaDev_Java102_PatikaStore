@@ -12,6 +12,12 @@ public class initalizeDemo {
         shop.addBrand("SAMSUNG");
 
 
+
+        CellPhone cellphone = new CellPhone("Mi9T", 3000);
+        cellphone.setRam(Ram.GB6);
+        shop.addProduct("XIAOMI", cellphone);
+
+
         Notebook notebook = new Notebook("Omen", 3400);
         notebook.setCpuModel(CpuModel.AMD_5900X);
         notebook.setRam(Ram.GB16);
@@ -19,9 +25,9 @@ public class initalizeDemo {
         shop.addProduct("HP", notebook);
 
 
-        CellPhone cellphone = new CellPhone("Mi9T", 3000);
+        cellphone = new CellPhone("Note9", 5000);
         cellphone.setRam(Ram.GB6);
-        shop.addProduct("XIAOMI", cellphone);
+        shop.addProduct("SAMSUNG", cellphone);
         
     }
 }

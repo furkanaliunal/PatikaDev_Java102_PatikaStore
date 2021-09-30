@@ -28,7 +28,7 @@ public abstract class Product implements IProduct{
 
     @Override
     public int compareTo(IProduct product){
-        return this.productName.compareTo(product.getProductName());
+        return this.id - product.getID();
     }
     @Override
     public String toString(){

@@ -21,7 +21,8 @@ public class ManagementPanel {
                 "1 - Notebook İşlemleri\n" +
                 "2 - Cep Telefonu İşlemleri\n" +
                 "3 - Marka Listele\n" +
-                "0 - Çıkış Yap");
+                "0 - Çıkış Yap" +
+                "\n\n\n");
     }
     public String getSelection(){
         String result;
@@ -31,21 +32,85 @@ public class ManagementPanel {
     }
 
     public void performSelection(String selection){
-
+        clear();
         switch(selection){
             case "0":
                 this.exit = true;
                 break;
             case "1":
-                shop.listProducts(ProductType.Notebook);
+                while(!menuNotebook());
                 break;
             case "2":
-                shop.listProducts(ProductType.CellPhone);
+                while(!menuCellPhone());
                 break;
             case "3":
                 shop.listBrands();
+                enterToContinue();
                 break;
         }
+        clear();
 
+    }
+
+    public Boolean menuNotebook(){
+        Boolean result = false;
+        System.out.println("Notebook Yönetim Paneli !\n" +
+                "1 - Notebook ekle\n" +
+                "2 - Notebook Listele\n" +
+                "0 - Ana Menü" +
+                "\n\n\n");
+        String selection = getSelection();
+        switch (selection) {
+            case "0":
+                result = true;
+                break;
+            case "1":
+                result = false;
+                break;
+            case "2":
+                clear();
+                shop.listProducts(ProductType.Notebook);
+                enterToContinue();
+                result = false;
+                break;
+        }
+        clear();
+        return result;
+    }
+
+    public Boolean menuCellPhone(){
+        Boolean result = false;
+        System.out.println("Cep Telefonu Yönetim Paneli !\n" +
+                "1 - Cep Telefonu ekle\n" +
+                "2 - Cep Telefonu Listele\n" +
+                "0 - Ana Menü" +
+                "\n\n\n");
+        String selection = getSelection();
+        switch (selection) {
+            case "0":
+                result = true;
+                break;
+            case "1":
+                result = false;
+                break;
+            case "2":
+                clear();
+                shop.listProducts(ProductType.CellPhone);
+                enterToContinue();
+                result = false;
+                break;
+        }
+        clear();
+        return result;
+    }
+
+    public void clear(){
+        for (int i = 0; i < 100; i++){
+            System.out.println("");
+        }
+    }
+    public void enterToContinue(){
+        System.out.print("Enter basarak geri dönebilirsin");
+        input.nextLine();
     }
 }

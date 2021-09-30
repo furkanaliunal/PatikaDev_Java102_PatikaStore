@@ -18,7 +18,7 @@ public class Brand implements Comparable<Brand>{
 
     @Override
     public String toString(){
-        return this.brandName + " (" + this.id + ")";
+        return this.brandName + " (" + products.size() + " ürün)";
     }
 
     @Override
@@ -52,7 +52,6 @@ public class Brand implements Comparable<Brand>{
     }
 
     public void addProduct(IProduct product){
-        product.setID(products.size());
         products.add(product);
     }
 }
