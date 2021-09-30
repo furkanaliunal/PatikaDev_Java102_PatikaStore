@@ -12,4 +12,5 @@ public enum ProductType {
     public String toString(){
         return this.typeName;
     }
+
 }

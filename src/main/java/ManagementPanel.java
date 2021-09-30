@@ -1,4 +1,6 @@
 import Products.ProductType;
+import Products.ReadyTypes.CellPhone;
+import Products.ReadyTypes.Notebook;
 
 import java.util.Scanner;
 
@@ -65,6 +67,7 @@ public class ManagementPanel {
                 result = true;
                 break;
             case "1":
+                addNotebookProduct();
                 result = false;
                 break;
             case "2":
@@ -92,6 +95,7 @@ public class ManagementPanel {
                 break;
             case "1":
                 result = false;
+                addCellPhoneProduct();
                 break;
             case "2":
                 clear();
@@ -102,6 +106,22 @@ public class ManagementPanel {
         }
         clear();
         return result;
+    }
+
+    public void addCellPhoneProduct(){
+        System.out.println("Ürünün markasını, modelini, fiyatını araya ',' koyarak yazınız");
+        System.out.println("Örnek: X Marka, S11 Plus, 2300");
+        System.out.print("Giriş: ");
+        String[] productData = input.nextLine().split(",");
+        shop.addProduct(productData[0].trim(), new CellPhone(productData[1].trim(), Integer.parseInt(productData[2].trim())));
+    }
+
+    public void addNotebookProduct(){
+        System.out.println("Ürünün markasını, modelini, fiyatını araya ',' koyarak yazınız");
+        System.out.println("Örnek: X Marka, S11 Plus, 2300");
+        System.out.print("Giriş: ");
+        String[] productData = input.nextLine().split(",");
+        shop.addProduct(productData[0].trim(), new Notebook(productData[1].trim(), Integer.parseInt(productData[2].trim())));
     }
 
     public void clear(){
