@@ -10,10 +10,12 @@ public class BrandsManager {
         brands = new TreeSet<>();
     }
 
-    public void addBrand(String brandName){
+    public Brand addBrand(String brandName){
         int id = brands.size();
         //System.out.println("Yeni marka " + brandName + ", mağazaya " + id + " id ile eklendi");
-        brands.add(new Brand(brandName, id));
+        Brand resultBrand = new Brand(brandName, id);
+        brands.add(resultBrand);
+        return resultBrand;
     }
 
     public Brand getBrand(String brandName){
@@ -22,7 +24,8 @@ public class BrandsManager {
                 return brand;
             }
         }
-        return new Brand(brandName+" bulunamadi.", -1);
+        Brand resultBrand = addBrand(brandName);
+        return resultBrand;
     }
 
     public TreeSet<Brand> getAllBrands(){
