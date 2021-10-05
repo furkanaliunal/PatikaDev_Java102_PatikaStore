@@ -76,3 +76,6 @@ Patika ekibi elektronik eşyaların satıldığı bir sanal bir mağaza açmaya 
 - Kullanıcı ürünleri benzersiz numaralarına göre silebilmeli.
 
 - Kullanıcı ürünlerin benzersiz numaralarına ve markalarına göre filtreleyip listeleyebilmeli.
+
+
+![Diagram](src\main\resources\images\diagram.png)
